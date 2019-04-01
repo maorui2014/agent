@@ -1,0 +1,50 @@
+.window-controls-container {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: center;
+  position: relative;
+  z-index: 3000;
+  -webkit-app-region: no-drag;
+  height: 100%;
+  width: 138px;
+  margin-left: auto;
+
+  .window-icon-bg {
+    display: inline-block;
+    -webkit-app-region: no-drag;
+    height: 100%;
+    width: 33.34%;
+
+    &:hover {
+      background-color: #1654c4;
+    }
+
+    &.window-close-bg:hover {
+      background-color: #d61425;
+    }
+
+    .window-icon {
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    .window-minimize {
+      background-image: url(./images/minimize.svg);
+    }
+
+    .window-maximize {
+      background-image: url(./images/maximize.svg);
+    }
+
+    .window-restore {
+      background-image: url(./images/restore.svg);
+    }
+
+    .window-close {
+      background-image: url(./images/close.svg);
+    }
+  }
+}

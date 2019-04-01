@@ -1,0 +1,46 @@
+.main-container {
+  &.maximize {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  bottom: 7px;
+  left: 7px;
+  box-sizing: border-box;
+  box-shadow: 0 0 7px rgba(44, 44, 44, 0.7);
+  background-color: #fff;
+
+  .topbar-container {
+    box-sizing: border-box;
+    height: 45px;
+    line-height: 45px;
+	background-color: #1c69f5;
+	color: #fff;
+    -webkit-app-region: drag;
+    user-select: none;
+  }
+
+  .content-container-wrapper {
+	display: flex;
+	position: absolute;
+	top: 45px;
+    right: 0;
+    bottom: 0;
+	left: 0;
+
+    .sider-container {
+	  width: 100px;
+	  background-color: #115de9;
+	}
+	
+	.content-container {
+		flex-grow: 1;
+		background-color: #fff;
+	}
+  }
+}
