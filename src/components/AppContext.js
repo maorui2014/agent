@@ -1,9 +1,9 @@
 import { createContext } from "react"
 
 const config = {
-    isMaximize: false
+	isMaximize: false
 }
 
-const AppContext = createContext()
+const AppContext = createContext(config)
 
-export default { config, AppContext }
+export { config, AppContext }

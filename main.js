@@ -34,7 +34,7 @@ function createWindow() {
 		}))
 	} else {
 		mainWindow.loadURL("http://localhost:3000/")
-		mainWindow.webContents.openDevTools()
+		// mainWindow.webContents.openDevTools()
 	}
 }
 
