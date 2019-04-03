@@ -1,50 +1,89 @@
-.window-controls-container {
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
-  text-align: center;
+.topbar-container {
   position: relative;
-  z-index: 3000;
+  box-sizing: border-box;
+  height: 45px;
+  line-height: 45px;
+  background-color: #1c69f5;
+  color: #fff;
   -webkit-app-region: no-drag;
-  height: 100%;
-  width: 138px;
-  margin-left: auto;
+  user-select: none;
 
-  .window-icon-bg {
-    display: inline-block;
+  .titlebar-drag-region {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-app-region: drag;
+  }
+
+  .window-appicon {
+    -webkit-app-region: drag;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 45px;
+    background: url(./images/logo.svg) no-repeat;
+  }
+
+  .window-title {
+	  position: absolute;
+	  top: 0;
+	  right: 138px;
+	  bottom: 0;
+	  left: 45px;
+	  color: #dde8fd;
+  }
+
+  .window-controls-container {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    position: relative;
+    z-index: 3000;
     -webkit-app-region: no-drag;
     height: 100%;
-    width: 33.34%;
+    width: 138px;
+    margin-left: auto;
 
-    &:hover {
-      background-color: #1654c4;
-    }
-
-    &.window-close-bg:hover {
-      background-color: #d61425;
-    }
-
-    .window-icon {
+    .window-icon-bg {
+      display: inline-block;
+      -webkit-app-region: no-drag;
       height: 100%;
-      width: 100%;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-    }
+      width: 33.34%;
 
-    .window-minimize {
-      background-image: url(./images/minimize.svg);
-    }
+      &:hover {
+        background-color: #1654c4;
+      }
 
-    .window-maximize {
-      background-image: url(./images/maximize.svg);
-    }
+      &.window-close-bg:hover {
+        background-color: #d61425;
+      }
 
-    .window-restore {
-      background-image: url(./images/restore.svg);
-    }
+      .window-icon {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
 
-    .window-close {
-      background-image: url(./images/close.svg);
+      .window-minimize {
+        background-image: url(./images/minimize.svg);
+      }
+
+      .window-maximize {
+        background-image: url(./images/maximize.svg);
+      }
+
+      .window-restore {
+        background-image: url(./images/restore.svg);
+      }
+
+      .window-close {
+        background-image: url(./images/close.svg);
+      }
     }
   }
 }

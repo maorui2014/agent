@@ -8,7 +8,7 @@ import "./index.scss"
 export default function Frame() {
 	return (
 		<div className="main-container">
-			<div className="topbar-container"><TopBar /></div>
+			<TopBar />
 			<div className="content-container-wrapper">
 				<div className="sider-container"><SideBar /></div>
 				<div className="content-container"><Content /></div>
