@@ -30,13 +30,13 @@ export default function TopBar() {
 	return (
 		<div className="window-controls-container">
 			<div className="window-icon-bg" onClick={ () => win.minimize() }>
-				<div className="window-icon window-minimize"></div>
+				<div className="window-icon window-minimize" />
 			</div>
 			<div className="window-icon-bg" onClick={ doMaximize }>
-				<div className={ `window-icon window-${ isMaximize ? "restore" : "maximize" }` }></div>
+				<div className={ `window-icon window-${ isMaximize ? "restore" : "maximize" }` } />
 			</div>
 			<div className="window-icon-bg window-close-bg" onClick={ () => win.close() }>
-				<div className="window-icon window-close"></div>
+				<div className="window-icon window-close" />
 			</div>
 		</div>
 	)
