@@ -1,20 +1,12 @@
 .main-container {
   position: absolute;
-  top: 7px;
-  right: 7px;
-  bottom: 7px;
-  left: 7px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   box-sizing: border-box;
-  box-shadow: 0 0 7px rgba(44, 44, 44, 0.7);
   background-color: #fff;
   -webkit-app-region: no-drag;
-
-  &.maximize {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
 
   .topbar-container {
     box-sizing: border-box;

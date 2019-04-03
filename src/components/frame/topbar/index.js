@@ -1,17 +1,15 @@
-import React, { useEffect, useContext } from "react"
-import { AppContext } from "../../AppContext"
+import React, { useEffect, useState } from "react"
 import "./index.scss"
 
 const { remote, ipcRenderer } = window.require("electron")
 const win = remote.getCurrentWindow()
 
 export default function TopBar() {
-	const [config, setConfig] = useContext(AppContext)
+	const [isMaximize, setIsMaximize] = useState(false)
 
 	useEffect(() => {
 		function onMaximize(event, isMaximize) {
-			win.setResizable(!isMaximize)
-			setConfig({ ...config, isMaximize: isMaximize })
+			setIsMaximize(isMaximize)
 		}
 
 		ipcRenderer.on("maximize", onMaximize)
@@ -20,14 +18,13 @@ export default function TopBar() {
 	}, [])
 
 	function doMaximize() {
-		if (config.isMaximize) {
+		if (isMaximize) {
 			win.unmaximize()
 		} else {
 			win.maximize()
 		}
 
-		win.setResizable(config.isMaximize)
-		setConfig({ ...config, isMaximize: !config.isMaximize })
+		setIsMaximize(!isMaximize)
 	}
 
 	return (
@@ -36,7 +33,7 @@ export default function TopBar() {
 				<div className="window-icon window-minimize"></div>
 			</div>
 			<div className="window-icon-bg" onClick={ doMaximize }>
-				<div className={ `window-icon window-${config.isMaximize ? "restore" : "maximize"}` }></div>
+				<div className={ `window-icon window-${ isMaximize ? "restore" : "maximize" }` }></div>
 			</div>
 			<div className="window-icon-bg window-close-bg" onClick={ () => win.close() }>
 				<div className="window-icon window-close"></div>

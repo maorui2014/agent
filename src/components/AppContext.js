@@ -1,7 +1,8 @@
 import { createContext } from "react"
 
+// global configuaration
 const config = {
-	isMaximize: false
+	
 }
 
 const AppContext = createContext(config)

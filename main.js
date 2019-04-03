@@ -11,9 +11,8 @@ function createWindow() {
 	mainWindow = new BrowserWindow({
 		frame: false,
 		minWidth: 400,
-		show: false,
 		minHeight: 300,
-		transparent: true,
+		show: false,
 		webPreferences: {
 			nodeIntegration: true
 		}
@@ -34,7 +33,7 @@ function createWindow() {
 		}))
 	} else {
 		mainWindow.loadURL("http://localhost:3000/")
-		// mainWindow.webContents.openDevTools()
+		mainWindow.webContents.openDevTools()
 	}
 }
 
