@@ -20,15 +20,17 @@ export default function TopBar() {
 
 	return (
 		<div className="topbar-container">
-			<div class="titlebar-drag-region" />
-			<div class="window-appicon" />
-			<div class="window-title">君诚地产</div>
+			<div className="titlebar-drag-region" />
+			<div className="window-appicon" onDoubleClick={ () => win.close() } />
+			<div className="window-title">中原地产</div>
+			<div className="setting-button" />
+			<div className="user-button" />
 			<div className="window-controls-container">
 				<div className="window-icon-bg" onClick={ () => win.minimize() }>
 					<div className="window-icon window-minimize" />
 				</div>
 				<div className="window-icon-bg" onClick={ doMaximize }>
-					<div className={ `window-icon window-${isMaximize ? "restore" : "maximize"}` } />
+					<div className={ `window-icon window-${ isMaximize ? "restore" : "maximize" }` } />
 				</div>
 				<div className="window-icon-bg window-close-bg" onClick={ () => win.close() }>
 					<div className="window-icon window-close" />
