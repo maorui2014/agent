@@ -1,3 +1,6 @@
+$tb-height: 45px;
+$tb-obj-width: 45px;
+
 .main-container {
   position: absolute;
   top: 0;
@@ -9,6 +12,92 @@
   border: 1px solid #000;
   -webkit-app-region: no-drag;
 
+  .topbar-container {
+    position: relative;
+    box-sizing: border-box;
+    height: $tb-height;
+    line-height: $tb-height;
+    background-color: #1c69f5;
+    color: #fff;
+    -webkit-app-region: no-drag;
+    user-select: none;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    .titlebar-drag-region {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      -webkit-app-region: drag;
+      user-select: none;
+    }
+
+    .window-appicon {
+      -webkit-app-region: no-drag;
+      user-select: none;
+      width: $tb-obj-width;
+      position: relative;
+      z-index: 2;
+      background: url(./images/logo.svg) no-repeat center center;
+    }
+
+    .window-title {
+      flex: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .control-button {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      border: 0 none;
+      z-index: 2;
+      -webkit-app-region: no-drag;
+      user-select: none;
+      width: $tb-obj-width;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      &:hover {
+        background-color: #1654c4;
+      }
+
+      &.use-information {
+        background-image: url(./images/user.svg);
+      }
+
+      &.settings {
+        background-image: url(./images/setting.svg);
+      }
+
+      &.window-minimize {
+        background-image: url(./images/minimize.svg);
+      }
+
+      &.window-maximize {
+        background-image: url(./images/maximize.svg);
+      }
+
+      &.window-restore {
+        background-image: url(./images/restore.svg);
+      }
+
+      &.window-close {
+        background-image: url(./images/close.svg);
+
+        &:hover {
+          background-color: #d61425;
+        }
+      }
+    }
+  }
+
   .content-container-wrapper {
     display: flex;
     position: absolute;
@@ -18,8 +107,48 @@
     left: 0;
 
     .sider-container {
-      width: 100px;
+      cursor: default;
+      width: 90px;
       background-color: #115de9;
+      color: #fff;
+      text-align: center;
+      -webkit-app-region: no-drag;
+      user-select: none;
+
+      .main-menu {
+        display: block;
+        text-decoration: none;
+        cursor: default;
+        color: #fff;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &:hover {
+          background-color: #1654c4;
+        }
+
+        &.selection {
+          background-color: #113f93;
+        }
+
+        .mgt-icon {
+          width: 26px;
+          height: 26px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 3px;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+
+        &.room-source-management .mgt-icon {
+          background-image: url(./images/room-source.svg);
+        }
+
+        &.client-management .mgt-icon {
+          background-image: url(./images/client.svg);
+        }
+      }
     }
 
     .content-container {
