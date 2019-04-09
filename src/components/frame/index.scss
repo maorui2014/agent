@@ -17,13 +17,15 @@ $tb-obj-width: 45px;
     box-sizing: border-box;
     height: $tb-height;
     line-height: $tb-height;
-    background-color: #1c69f5;
+    background-color: #3f51b5;
     color: #fff;
     -webkit-app-region: no-drag;
     user-select: none;
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
+    z-index: 1;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
 
     .titlebar-drag-region {
       position: absolute;
@@ -65,7 +67,7 @@ $tb-obj-width: 45px;
       background-position: center center;
 
       &:hover {
-        background-color: #1654c4;
+        background-color: #3949a3;
       }
 
       &.use-information {
@@ -109,51 +111,75 @@ $tb-obj-width: 45px;
     .sider-container {
       cursor: default;
       width: 90px;
-      background-color: #115de9;
-      color: #fff;
+      background-color: #fff;
+      color: #757575;
       text-align: center;
       -webkit-app-region: no-drag;
       user-select: none;
+      position: relative;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
 
       .main-menu {
         display: block;
         text-decoration: none;
         cursor: default;
-        color: #fff;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        color: #757575;
+        padding-top: 15px;
+        padding-bottom: 15px;
 
         &:hover {
-          background-color: #1654c4;
+		  color: #3f51b5;
+		  background-color: #f4f5f9;
         }
 
         &.selection {
-          background-color: #113f93;
+		  color: #3f51b5;
+		  background-color: #eeeff7;
         }
 
         .mgt-icon {
           width: 26px;
-          height: 26px;
+		  height: 26px;
           margin-left: auto;
           margin-right: auto;
-          margin-bottom: 3px;
+          margin-bottom: 6px;
           background-repeat: no-repeat;
           background-position: center center;
         }
 
-        &.room-source-management .mgt-icon {
-          background-image: url(./images/room-source.svg);
-        }
+        &.room-source-management {
+		  .mgt-icon {
+		    background-image: url(./images/room-source.svg);
+		  }
 
-        &.client-management .mgt-icon {
-          background-image: url(./images/client.svg);
-        }
+		  &:hover, 
+		  &.selection {
+			.mgt-icon {
+			  background-image: url(./images/room-source-select.svg);
+			}
+		  }
+	    }
+
+        &.client-management {
+		  .mgt-icon {
+		    background-image: url(./images/client.svg);
+		  }
+
+		  &:hover,
+		  &.selection {
+			.mgt-icon {
+			  background-image: url(./images/client-select.svg);
+			}
+		  }
+	    }
       }
     }
 
     .content-container {
       flex-grow: 1;
-      background-color: #fff;
+      background-color: #f3f4f5;
+      box-sizing: border-box;
+	  padding: 10px 20px;
     }
   }
 }

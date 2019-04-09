@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Route, Switch, Link } from "react-router-dom"
+import classNames from "classnames"
 
 import RoomSource from "../room-source"
 import Client from "../client"
@@ -10,6 +11,7 @@ const win = remote.getCurrentWindow()
 
 export default function Frame() {
 	const [isMaximize, setIsMaximize] = useState(false)
+	const [curSelection, setCurSelection] = useState("room-source")
 
 	useEffect(() => {
 		const onMaximize = (event, isMaximize) => setIsMaximize(isMaximize)
@@ -36,11 +38,17 @@ export default function Frame() {
 			</div>
 			<div className="content-container-wrapper">
 				<div className="sider-container">
-					<Link className="main-menu room-source-management" to="/room-source">
+					<Link className={ classNames("main-menu room-source-management", { selection: curSelection == "room-source" }) }
+						  onClick={ () => setCurSelection("room-source") }
+						  to="/room-source"
+					>
 						<div className="mgt-icon" />
 						<span>房源管理</span>
 					</Link>
-					<Link className="main-menu client-management" to="/client">
+					<Link className={ classNames("main-menu client-management", { selection: curSelection == "client" }) }
+					      onClick={ () => setCurSelection("client") }
+					      to="/client"
+					>
 						<div className="mgt-icon" />
 						<span>客户管理</span>
 					</Link>
