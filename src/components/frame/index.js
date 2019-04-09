@@ -38,14 +38,14 @@ export default function Frame() {
 			</div>
 			<div className="content-container-wrapper">
 				<div className="sider-container">
-					<Link className={ classNames("main-menu room-source-management", { selection: curSelection == "room-source" }) }
+					<Link className={ classNames("main-menu room-source-management", { selection: curSelection === "room-source" }) }
 						  onClick={ () => setCurSelection("room-source") }
 						  to="/room-source"
 					>
 						<div className="mgt-icon" />
 						<span>房源管理</span>
 					</Link>
-					<Link className={ classNames("main-menu client-management", { selection: curSelection == "client" }) }
+					<Link className={ classNames("main-menu client-management", { selection: curSelection === "client" }) }
 					      onClick={ () => setCurSelection("client") }
 					      to="/client"
 					>
