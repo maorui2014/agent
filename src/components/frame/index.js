@@ -4,6 +4,8 @@ import classNames from "classnames"
 
 import RoomSource from "../room-source"
 import Client from "../client"
+import Deal from "../deal"
+
 import "./index.scss"
 
 const { remote, ipcRenderer } = window.require("electron")
@@ -24,6 +26,14 @@ export default function Frame() {
 		setIsMaximize(!isMaximize)
 	}
 
+	function routeLinkProps(linkType) {
+		return {
+			className: classNames(`main-menu ${linkType}-management`, { selection: curSelection === linkType }),
+			onClick: () => setCurSelection(linkType),
+			to: `/${linkType}`
+		}
+	}
+
 	return (
 		<div className="main-container">
 			<div className="topbar-container">
@@ -38,25 +48,24 @@ export default function Frame() {
 			</div>
 			<div className="content-container-wrapper">
 				<div className="sider-container">
-					<Link className={ classNames("main-menu room-source-management", { selection: curSelection === "room-source" }) }
-						  onClick={ () => setCurSelection("room-source") }
-						  to="/room-source"
-					>
+					<Link { ...routeLinkProps("room-source") }>
 						<div className="mgt-icon" />
 						<span>房源管理</span>
 					</Link>
-					<Link className={ classNames("main-menu client-management", { selection: curSelection === "client" }) }
-					      onClick={ () => setCurSelection("client") }
-					      to="/client"
-					>
+					<Link { ...routeLinkProps("client") }>
 						<div className="mgt-icon" />
 						<span>客户管理</span>
+					</Link>
+					<Link { ...routeLinkProps("deal") }>
+						<div className="mgt-icon" />
+						<span>交易管理</span>
 					</Link>
 				</div>
 				<div className="content-container">
 					<Switch>
 						<Route path="/client" component={ Client } />
-						<Route path={ ["/", "/room-source"] } component={ RoomSource } />
+						<Route path="/deal" component={ Deal } />
+						<Route path={ ["/", "/room-source"] } exact component={ RoomSource } />
 					</Switch>
 				</div>
 			</div>

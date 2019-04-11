@@ -109,8 +109,8 @@ $tb-obj-width: 45px;
 
     .sider-container {
       cursor: default;
-	  width: 90px;
-	  min-width: 90px;
+      width: 90px;
+      min-width: 90px;
       background-color: #fff;
       color: #757575;
       text-align: center;
@@ -128,18 +128,18 @@ $tb-obj-width: 45px;
         padding-bottom: 15px;
 
         &:hover {
-		  color: #3f51b5;
-		  background-color: #f4f5f9;
+          color: #3f51b5;
+          background-color: #f4f5f9;
         }
 
         &.selection {
-		  color: #3f51b5;
-		  background-color: #eeeff7;
+          color: #3f51b5;
+          background-color: #eeeff7;
         }
 
         .mgt-icon {
           width: 26px;
-		  height: 26px;
+          height: 26px;
           margin-left: auto;
           margin-right: auto;
           margin-bottom: 6px;
@@ -148,30 +148,43 @@ $tb-obj-width: 45px;
         }
 
         &.room-source-management {
-		  .mgt-icon {
-		    background-image: url(./images/room-source.svg);
-		  }
+          .mgt-icon {
+            background-image: url(./images/room-source.svg);
+          }
 
-		  &:hover, 
-		  &.selection {
-			.mgt-icon {
-			  background-image: url(./images/room-source-select.svg);
-			}
-		  }
-	    }
+          &:hover,
+          &.selection {
+            .mgt-icon {
+              background-image: url(./images/room-source-select.svg);
+            }
+          }
+        }
 
         &.client-management {
-		  .mgt-icon {
-		    background-image: url(./images/client.svg);
-		  }
+          .mgt-icon {
+            background-image: url(./images/client.svg);
+          }
 
-		  &:hover,
-		  &.selection {
-			.mgt-icon {
-			  background-image: url(./images/client-select.svg);
-			}
-		  }
-	    }
+          &:hover,
+          &.selection {
+            .mgt-icon {
+              background-image: url(./images/client-select.svg);
+            }
+          }
+        }
+
+        &.deal-management {
+          .mgt-icon {
+            background-image: url(./images/deal.svg);
+          }
+
+          &:hover,
+          &.selection {
+            .mgt-icon {
+              background-image: url(./images/deal-select.svg);
+            }
+          }
+        }
       }
     }
 
@@ -179,7 +192,7 @@ $tb-obj-width: 45px;
       flex-grow: 1;
       background-color: #f3f4f5;
       box-sizing: border-box;
-	  padding: 10px 20px;
+      padding: 10px 20px;
     }
   }
 }
