@@ -42,6 +42,7 @@ export default function Frame() {
 				<div className="window-title">中原地产 [服务端]</div>
 				<div className="control-button use-information" />
 				<div className="control-button settings" />
+				<div className="control-button help" />
 				<div className="control-button window-minimize" onClick={ () => win.minimize() } />
 				<div className={ `control-button window-${isMaximize ? "restore" : "maximize"}` } onClick={ doMaximize } />
 				<div className="control-button window-close" onClick={ () => win.close() } />

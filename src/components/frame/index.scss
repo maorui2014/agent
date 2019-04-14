@@ -76,7 +76,11 @@ $tb-obj-width: 45px;
       &.settings {
         background-image: url(./images/setting.svg);
       }
-
+	  
+	  &.help {
+        background-image: url(./images/help.svg);
+	  }
+	  
       &.window-minimize {
         background-image: url(./images/minimize.svg);
       }
@@ -192,7 +196,7 @@ $tb-obj-width: 45px;
       flex-grow: 1;
       background-color: #f3f4f5;
       box-sizing: border-box;
-      padding: 10px 20px;
+      padding: 10px 0;
     }
   }
 }
