@@ -1,20 +1,13 @@
 .page-container {
-  .normal-text {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
   .tool-button-bar {
-    white-space: nowrap;
-    overflow: hidden;
-    background-color: #fbfbfc;
-    border-top: 1px solid #e3e3e3;
-    border-bottom: 1px solid #e3e3e3;
-	padding: 5px 20px;
-	font-size: 24px;
+	display: flex;
+	
+	li {
+		margin-right: 10px;
+	}
   }
 
   .search-bar {
-    padding: 10px 20px;
+    padding: 10px 0;
   }
 }
