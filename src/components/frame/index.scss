@@ -22,8 +22,6 @@ $tb-obj-width: 45px;
     -webkit-app-region: no-drag;
     user-select: none;
     display: flex;
-    flex-grow: 0;
-    flex-shrink: 0;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
 
     .titlebar-drag-region {
@@ -40,6 +38,8 @@ $tb-obj-width: 45px;
     .window-appicon {
       -webkit-app-region: no-drag;
       user-select: none;
+      flex-grow: 0;
+      flex-shrink: 0;
       width: $tb-obj-width;
       position: relative;
       z-index: 2;
@@ -53,6 +53,56 @@ $tb-obj-width: 45px;
       text-overflow: ellipsis;
     }
 
+    .search-bar {
+      -webkit-app-region: no-drag;
+      z-index: 2;
+      padding-right: 10px;
+      box-sizing: border-box;
+      width: 280px;
+      flex-grow: 0;
+      flex-shrink: 0;
+
+      .auto-complete {
+        width: 100%;
+        bottom: 1px;
+
+        .ant-select-selection {
+          background-color: transparent;
+        }
+
+        &:hover .auto-complete-input {
+          background-color: #25327c;
+        }
+
+        .auto-complete-input {
+          background-color: #324191;
+          border: 0 none;
+
+          .ant-input-prefix i {
+            color: #868db5;
+          }
+
+          .ant-input-suffix i {
+            color: #868db5;
+            &:hover {
+              color: #333;
+            }
+          }
+
+          .ant-input {
+            border: 0 none;
+			top: -1px;
+			font-size: 12px;
+            color: #868db5;
+
+            &:focus {
+              background-color: #fff;
+            }
+          }
+        }
+      }
+    }
+
     .control-button {
       position: relative;
       margin: 0;
@@ -62,6 +112,8 @@ $tb-obj-width: 45px;
       -webkit-app-region: no-drag;
       user-select: none;
       width: $tb-obj-width;
+      flex-grow: 0;
+      flex-shrink: 0;
       background-repeat: no-repeat;
       background-position: center center;
 
@@ -76,11 +128,11 @@ $tb-obj-width: 45px;
       &.settings {
         background-image: url(./images/setting.svg);
       }
-	  
-	  &.help {
+
+      &.help {
         background-image: url(./images/help.svg);
-	  }
-	  
+      }
+
       &.window-minimize {
         background-image: url(./images/minimize.svg);
       }
@@ -124,12 +176,15 @@ $tb-obj-width: 45px;
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
 
       .main-menu {
+        box-sizing: border-box;
         display: block;
         text-decoration: none;
         cursor: default;
         color: #757575;
         padding-top: 15px;
         padding-bottom: 15px;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
 
         &:hover {
           color: #3f51b5;
@@ -139,6 +194,8 @@ $tb-obj-width: 45px;
         &.selection {
           color: #3f51b5;
           background-color: #eeeff7;
+          border-top: 1px solid #dddfef;
+          border-bottom: 1px solid #dddfef;
         }
 
         .mgt-icon {
@@ -149,6 +206,8 @@ $tb-obj-width: 45px;
           margin-bottom: 6px;
           background-repeat: no-repeat;
           background-position: center center;
+          line-height: 0;
+          font-size: 26px;
         }
 
         &.room-source-management {
@@ -194,9 +253,14 @@ $tb-obj-width: 45px;
 
     .content-container {
       flex-grow: 1;
+      display: flex;
       background-color: #f3f4f5;
       box-sizing: border-box;
-      padding: 10px 20px;
+      padding: 0 5px;
+
+      .page-container {
+        flex: auto;
+      }
     }
   }
 }

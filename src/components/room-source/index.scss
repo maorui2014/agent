@@ -1,13 +1,72 @@
-.page-container {
-  .tool-button-bar {
-	display: flex;
-	
-	li {
-		margin-right: 10px;
-	}
+.room-source-page {
+  display: flex;
+  flex-direction: column;
+
+  .filter-tabs {
+    user-select: none;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    .ant-tabs-tab {
+      margin: 0;
+
+      &.ant-tabs-tab-active {
+        font-weight: normal;
+      }
+    }
+
+    .extra-contents {
+      padding-top: 4px;
+      margin-right: 17px;
+
+      .flat-button {
+        cursor: pointer;
+        font-size: 14px;
+        margin-left: 20px;
+
+        &:hover {
+          color: #0f4eff;
+        }
+      }
+    }
   }
 
-  .search-bar {
-    padding: 10px 0;
+  .ant-table td {
+    white-space: nowrap;
+  }
+
+  .main-data-table {
+    flex: auto;
+    margin-left: 17px;
+    margin-right: 17px;
+    font-size: 12px;
+
+    .ant-table-placeholder {
+      background-color: transparent;
+    }
+
+    .ant-table-thead {
+      font-size: 12px;
+
+      tr > th {
+        font-weight: normal;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .pageination-wrapper {
+    white-space: nowrap;
+    user-select: none;
+    text-align: center;
+    font-size: 12px;
+
+	&.ant-table-pagination {
+	  float: none;
+	}
+
+    .ant-pagination-options .ant-select {
+      font-size: 12px;
+    }
   }
 }
