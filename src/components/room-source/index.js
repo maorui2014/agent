@@ -1,5 +1,5 @@
 import React from "react"
-import { Tabs, Icon, Table } from "antd"
+import { Tabs, Icon, Table, Pagination } from "antd"
 
 import "./index.scss"
 
@@ -24,43 +24,88 @@ export default function RoomSource() {
 		{ key: "all", name: "全部" }
 	]
 
-	const columns = [
-		{ dataIndex: "flag", key: "flag", title: "标记", width: 50 },
-		{ dataIndex: "no", key: "no", title: "房源编号", width: 100 },
-		{ dataIndex: "signDate", key: "signDate", title: "登记日期", width: 100 },
-		{ dataIndex: "status", key: "status", title: "当前状态", width: 100 },
-		{ dataIndex: "rentalType", key: "rentalType", title: "租售类型", width: 100 },
-		{ dataIndex: "counselor", key: "counselor", title: "置业顾问", width: 100 },
-		{ dataIndex: "houseType", key: "houseType", title: "房屋类型", width: 100 },
-		{ dataIndex: "unitType", key: "unitType", title: "户型", width: 100 },
-		{ dataIndex: "area", key: "area", title: "房本面积", width: 100 },
-		{ dataIndex: "interiorFinish", key: "interiorFinish", title: "装修情况", width: 100 },
-		{ dataIndex: "orientation", key: "orientation", title: "朝向", width: 100 },
-		{ dataIndex: "floor", key: "floor", title: "楼层", width: 100 },
-		{ dataIndex: "district", key: "district", title: "所在小区", width: 100 },
-		{ dataIndex: "buildingAge", key: "buildingAge", title: "建筑年代", width: 100 },
-		{ dataIndex: "propertyManagement", key: "propertyManagement", title: "物业公司", width: 100 },
-		{ dataIndex: "propertyFee", key: "propertyFee", title: "物业费", width: 100 },
-		{ dataIndex: "location", key: "location", title: "所在区域", width: 100 },
-		{ dataIndex: "business", key: "business", title: "所属商圈", width: 100 },
-		{ dataIndex: "address", key: "address", title: "详细地址", width: 200 },
+	const data = [
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
+		{ id: 1, flag: "毛文超" },
+		{ id: 3, flag: "毛睿" },
+		{ id: 2, flag: "巫芬芳" },
 	]
 
-	const pager = {
-	    className: "pageination-wrapper",
-		showSizeChanger: true,
-		showQuickJumper: true,
-		defaultCurrent: 1,
-		total: 500,
-		size: "middle"
-	}
+	const columns = [
+		{ dataIndex: "flag", key: "id", title: "标记", width: 50 },
+		{ dataIndex: "no", title: "房源编号", width: 100 },
+		{ dataIndex: "signDate", title: "登记日期", width: 100 },
+		{ dataIndex: "status", title: "当前状态", width: 100 },
+		{ dataIndex: "rentalType", title: "租售类型", width: 100 },
+		{ dataIndex: "counselor", title: "置业顾问", width: 100 },
+		{ dataIndex: "houseType", title: "房屋类型", width: 100 },
+		{ dataIndex: "unitType", title: "户型", width: 100 },
+		{ dataIndex: "area", title: "房本面积", width: 100 },
+		{ dataIndex: "interiorFinish", title: "装修情况", width: 100 },
+		{ dataIndex: "orientation", title: "朝向", width: 100 },
+		{ dataIndex: "floor", title: "楼层", width: 100 },
+		{ dataIndex: "district", title: "所在小区", width: 100 },
+		{ dataIndex: "buildingAge", title: "建筑年代", width: 100 },
+		{ dataIndex: "propertyManagement", title: "物业公司", width: 100 },
+		{ dataIndex: "propertyFee", title: "物业费", width: 100 },
+		{ dataIndex: "location", title: "所在区域", width: 100 },
+		{ dataIndex: "business", title: "所属商圈", width: 100 },
+		{ dataIndex: "address", title: "详细地址", width: 200 },
+	]
 
 	return (
 		<div className="page-container room-source-page">
 			<Tabs className="filter-tabs" defaultActiveKey={ tabs[0].key } tabBarExtraContent={ <AdditionalOperation /> }>
 				{ tabs.map(tab => <TabPane key={ tab.key } tab={ tab.name } />) }
 			</Tabs>
-			<Table className="main-data-table" size="middle" scroll={ { x: 1900, height: "100%" } } pagination={ pager } bordered />
+			<div className="main-data-table">
+				<Table size="middle" rowClassName="row-selection" showHeader={ Boolean(data.length) } pagination={ false } dataSource={ data } columns={ columns } bordered />
+			</div>
+			<Pagination className="pageination-wrapper" showTotal={ total => `共 ${total} 条记录` } showSizeChanger showQuickJumper defaultCurrent={ 1 } total={ data.length } />
 		</div>
 	)
 }

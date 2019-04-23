@@ -9,6 +9,7 @@
 
     .ant-tabs-tab {
       margin: 0;
+      padding: 12px;
 
       &.ant-tabs-tab-active {
         font-weight: normal;
@@ -17,7 +18,7 @@
 
     .extra-contents {
       padding-top: 4px;
-      margin-right: 17px;
+      margin-right: 10px;
 
       .flat-button {
         cursor: pointer;
@@ -31,26 +32,60 @@
     }
   }
 
-  .ant-table td {
-    white-space: nowrap;
-  }
-
   .main-data-table {
     flex: auto;
-    margin-left: 17px;
-    margin-right: 17px;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
     font-size: 12px;
 
-    .ant-table-placeholder {
-      background-color: transparent;
-    }
+    .ant-table-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: auto;
 
-    .ant-table-thead {
-      font-size: 12px;
+      .ant-table {
+        .ant-table-content {
+          background-color: #fff;
+          border: 1px solid #e8e8e8;
+          border-radius: 4px;
 
-      tr > th {
-        font-weight: normal;
-        white-space: nowrap;
+          table {
+            border: 0 none;
+
+            .ant-table-thead {
+              font-size: 12px;
+
+              tr > th {
+                font-weight: normal;
+                white-space: nowrap;
+                padding: 8px;
+              }
+            }
+
+            tr > td:last-child,
+            tr > th:last-child {
+              border-right: 0 none;
+            }
+          }
+
+          .ant-table-tbody td {
+            white-space: nowrap;
+            padding: 8px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .ant-table-placeholder {
+        background-color: #f8f8f8;
+
+        .ant-empty-description {
+          font-size: 12px;
+        }
       }
     }
   }
@@ -60,10 +95,12 @@
     user-select: none;
     text-align: center;
     font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
-	&.ant-table-pagination {
-	  float: none;
-	}
+    .ant-pagination-item-active {
+      background-color: #dbf1ff;
+    }
 
     .ant-pagination-options .ant-select {
       font-size: 12px;
