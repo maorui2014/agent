@@ -45,16 +45,16 @@
       left: 0;
       right: 0;
       bottom: 0;
-      overflow: auto;
-      background-color: #fff;
-      border: 1px solid #e8e8e8;
-      border-radius: 4px;
+    //   overflow: auto;
+    //   background-color: #fff;
+    //   border: 1px solid #e8e8e8;
+    //   border-radius: 4px;
 
       .ant-table {
         .ant-table-content {
           table {
-            border: 0 none;
-            table-layout: fixed;
+            // border: 0 none;
+            //table-layout: fixed;
 
             .ant-table-thead {
               font-size: 12px;
@@ -68,7 +68,7 @@
 
             tr > td:last-child,
             tr > th:last-child {
-              border-right: 0 none;
+            //   border-right: 0 none;
             }
           }
 
