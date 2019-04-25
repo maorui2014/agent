@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Tabs, Icon, Table, Pagination } from "antd"
 
 import "./index.scss"
@@ -71,13 +71,11 @@ export default function RoomSource() {
 		{ id: 3, flag: "毛睿" },
 		{ id: 2, flag: "巫芬芳" },
 		{ id: 1, flag: "毛文超" },
-		{ id: 3, flag: "毛睿" },
-		{ id: 2, flag: "巫芬芳" },
+		{ id: 3, flag: "毛睿nnnn" },
+		{ id: 2, flag: "巫芬芳wwww" },
 	]
 
-	// 1. 固定表头
 	// 2. 设置全局精美的滚动条
-	// 3. 处理 fixed 列样式的问题
 	// 4. 若无数据则隐藏分页栏，并设置正确样式
 
 	const columns = [
@@ -102,13 +100,26 @@ export default function RoomSource() {
 		{ dataIndex: "address", title: "详细地址", width: 200 },
 	]
 
+	const [tableHeight, setTableHeight] = useState(window.innerHeight-196)
+
+	useEffect(()=>{
+		const resizeHandler = () => {
+			setTableHeight(window.innerHeight-196)
+		}
+
+		window.addEventListener("resize", resizeHandler)
+		return ()=>{
+			window.removeEventListener("reisze", resizeHandler)
+		}
+	})
+
 	return (
 		<div className="page-container room-source-page">
 			<Tabs className="filter-tabs" defaultActiveKey={ tabs[0].key } tabBarExtraContent={ <AdditionalOperation /> }>
 				{ tabs.map(tab => <TabPane key={ tab.key } tab={ tab.name } />) }
 			</Tabs>
 			<div className="main-data-table">
-				<Table scroll={ { x: 2000, y: 500 } } size="middle" rowClassName="row-selection" showHeader={ Boolean(data.length) } pagination={ false } dataSource={ data } columns={ columns } bordered />
+				<Table scroll={ { x: "max-content", y: tableHeight } } size="middle" rowClassName="row-selection" showHeader={ Boolean(data.length) } pagination={ false } dataSource={ data } columns={ columns } bordered />
 			</div>
 			<Pagination className="pageination-wrapper" showTotal={ total => `共 ${ total } 条记录` } showSizeChanger showQuickJumper defaultCurrent={ 1 } total={ data.length } />
 		</div>
