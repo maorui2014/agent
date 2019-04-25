@@ -1,109 +1,103 @@
 .room-source-page {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  .filter-tabs {
-    user-select: none;
-    flex-grow: 0;
-    flex-shrink: 0;
+    .filter-tabs {
+        user-select: none;
+        flex-grow: 0;
+        flex-shrink: 0;
 
-    .ant-tabs-tab {
-      margin: 0;
-      padding: 12px;
+        .ant-tabs-tab {
+            margin: 0;
+            padding: 12px;
 
-      &.ant-tabs-tab-active {
-        font-weight: normal;
-      }
-    }
-
-    .extra-contents {
-      padding-top: 4px;
-      margin-right: 10px;
-
-      .flat-button {
-        cursor: pointer;
-        font-size: 14px;
-        margin-left: 20px;
-
-        &:hover {
-          color: #0f4eff;
-        }
-      }
-    }
-  }
-
-  .main-data-table {
-    flex: auto;
-    position: relative;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 12px;
-
-    .ant-table-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    //   overflow: auto;
-    //   background-color: #fff;
-    //   border: 1px solid #e8e8e8;
-    //   border-radius: 4px;
-
-      .ant-table {
-        .ant-table-content {
-          table {
-            // border: 0 none;
-            //table-layout: fixed;
-
-            .ant-table-thead {
-              font-size: 12px;
-
-              tr > th {
+            &.ant-tabs-tab-active {
                 font-weight: normal;
-                white-space: nowrap;
-                padding: 8px;
-              }
+            }
+        }
+
+        .extra-contents {
+            padding-top: 4px;
+            margin-right: 10px;
+
+            .flat-button {
+                cursor: pointer;
+                font-size: 14px;
+                margin-left: 20px;
+
+                &:hover {
+                    color: #0f4eff;
+                }
+            }
+        }
+    }
+
+    .main-data-table {
+        flex: auto;
+        position: relative;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 12px;
+
+        .ant-table-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            background-color: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: 4px;
+
+            .ant-table {
+                .ant-table-content {
+                    table {
+                        border: 0 none;
+
+                        .ant-table-thead {
+                            font-size: 12px;
+
+                            tr>th {
+                                font-weight: normal;
+                                white-space: nowrap;
+                                padding: 8px;
+                            }
+                        }
+                    }
+
+                    .ant-table-tbody td {
+                        white-space: nowrap;
+                        padding: 8px;
+                        font-size: 12px;
+                    }
+                }
             }
 
-            tr > td:last-child,
-            tr > th:last-child {
-            //   border-right: 0 none;
-            }
-          }
+            .ant-table-placeholder {
+                background-color: #f8f8f8;
 
-          .ant-table-tbody td {
-            white-space: nowrap;
-            padding: 8px;
+                .ant-empty-description {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .pageination-wrapper {
+        white-space: nowrap;
+        user-select: none;
+        text-align: center;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        .ant-pagination-item-active {
+            background-color: #dbf1ff;
+        }
+
+        .ant-pagination-options .ant-select {
             font-size: 12px;
-          }
         }
-      }
-
-      .ant-table-placeholder {
-        background-color: #f8f8f8;
-
-        .ant-empty-description {
-          font-size: 12px;
-        }
-      }
     }
-  }
-
-  .pageination-wrapper {
-    white-space: nowrap;
-    user-select: none;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    .ant-pagination-item-active {
-      background-color: #dbf1ff;
-    }
-
-    .ant-pagination-options .ant-select {
-      font-size: 12px;
-    }
-  }
 }

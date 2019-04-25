@@ -25,7 +25,7 @@ export default function RoomSource() {
 	]
 
 	const data = [
-		{ id: 1, flag: "毛文超毛文超毛文超毛文超毛文超毛文超毛文超" },
+		{ id: 1, flag: "毛文超" },
 		{ id: 3, flag: "毛睿" },
 		{ id: 2, flag: "巫芬芳" },
 		{ id: 1, flag: "毛文超" },
@@ -108,7 +108,7 @@ export default function RoomSource() {
 				{ tabs.map(tab => <TabPane key={ tab.key } tab={ tab.name } />) }
 			</Tabs>
 			<div className="main-data-table">
-				<Table scroll={{x:2000,y:500}} size="middle" rowClassName="row-selection" showHeader={ Boolean(data.length) } pagination={ false } dataSource={ data } columns={ columns } bordered />
+				<Table scroll={ { x: 2000, y: 500 } } size="middle" rowClassName="row-selection" showHeader={ Boolean(data.length) } pagination={ false } dataSource={ data } columns={ columns } bordered />
 			</div>
 			<Pagination className="pageination-wrapper" showTotal={ total => `共 ${ total } 条记录` } showSizeChanger showQuickJumper defaultCurrent={ 1 } total={ data.length } />
 		</div>
