@@ -6,9 +6,9 @@
   "env": "DEV",
   "dependencies": {
     "electron": "^4.1.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",

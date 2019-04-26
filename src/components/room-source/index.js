@@ -100,15 +100,15 @@ export default function RoomSource() {
 		{ dataIndex: "address", title: "详细地址", width: 200 },
 	]
 
-	const [tableHeight, setTableHeight] = useState(window.innerHeight-196)
+	const [tableHeight, setTableHeight] = useState(window.innerHeight - 196)
 
-	useEffect(()=>{
+	useEffect(() => {
 		const resizeHandler = () => {
-			setTableHeight(window.innerHeight-196)
+			setTableHeight(window.innerHeight - 196)
 		}
 
 		window.addEventListener("resize", resizeHandler)
-		return ()=>{
+		return () => {
 			window.removeEventListener("reisze", resizeHandler)
 		}
 	})
