@@ -44,21 +44,43 @@
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
       overflow: hidden;
-      background-color: #fff;
       border: 1px solid #e8e8e8;
       border-radius: 4px;
 
       .ant-table {
         .ant-table-content {
+          font-size: 12px;
+
+          .ant-table-column-sorter {
+            font-size: 14px;
+          }
+
           .ant-table-header {
             &::-webkit-scrollbar {
               opacity: 0;
             }
           }
 
+          .ant-table-body-outer .ant-table-body-inner {
+            table {
+              width: min-content;
+
+              td {
+                white-space: nowrap;
+                padding: 8px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+
+          .ant-table-fixed-right {
+            border-left: 1px solid #e8e8e8;
+          }
+
           table {
+            table-layout: fixed;
             border: 0 none;
 
             .ant-table-thead {
@@ -72,38 +94,23 @@
             }
           }
 
-          .ant-table-tbody td {
+          .ant-table-tbody tr td {
             white-space: nowrap;
             padding: 8px;
-            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       }
 
-      .ant-table-placeholder {
+      .ant-table-empty .ant-table-placeholder {
+        border: 0 none;
         background-color: #f8f8f8;
 
         .ant-empty-description {
           font-size: 12px;
         }
       }
-    }
-  }
-
-  .pageination-wrapper {
-    white-space: nowrap;
-    user-select: none;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    .ant-pagination-item-active {
-      background-color: #dbf1ff;
-    }
-
-    .ant-pagination-options .ant-select {
-      font-size: 12px;
     }
   }
 }
