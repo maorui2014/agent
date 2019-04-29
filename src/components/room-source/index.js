@@ -230,7 +230,7 @@ export default function RoomSource() {
 				{ tabs.map(tab => <TabPane key={ tab.key } tab={ tab.name } />) }
 			</Tabs>
 			<div className="main-data-table">
-				<Table bordered scroll={ { x: "max-content", y: tableHeight } } showHeader={ Boolean(data.length) } rowKey="id"
+				<Table rowSelection={ { type: "radio" } } bordered scroll={ { x: "max-content", y: tableHeight } } showHeader={ Boolean(data.length) } rowKey="id"
 					rowClassName="row-selection" pagination={ false } dataSource={ data } columns={ columns } size="middle" />
 			</div>
 			<Pagination hideOnSinglePage showSizeChanger showQuickJumper pageSizeOptions={ ["15", "30", "45", "60"] }

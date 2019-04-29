@@ -24,6 +24,7 @@
         cursor: pointer;
         font-size: 14px;
         margin-left: 20px;
+        color: #333;
 
         &:hover {
           color: #0f4eff;
@@ -71,6 +72,7 @@
                 padding: 8px;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                color: #333;
               }
             }
           }
@@ -99,6 +101,7 @@
             padding: 8px;
             overflow: hidden;
             text-overflow: ellipsis;
+            color: #333;
           }
         }
       }
