@@ -56,6 +56,28 @@ li {
   }
 }
 
+.user-profile {
+  padding: 5px 10px;
+  display: flex;
+
+  .user-name {
+    margin-left: 10px;
+    margin-right: 10px;
+
+    header {
+      font-weight: bold;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+.logout-button {
+  color: #ff5818;
+}
+
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;

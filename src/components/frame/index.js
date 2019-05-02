@@ -6,9 +6,10 @@ import classNames from "classnames"
 import zhCN from "antd/lib/locale-provider/zh_CN"
 import RoomSource from "../room-source"
 import Client from "../client"
-import Deal from "../deal"
-import Analyze from "../analyze"
+import Team from "../team"
 import SearchBar from "../search-bar"
+import HelpButton from "../help-button"
+import UserInfoButton from "../user-info-button"
 
 import "./index.scss"
 
@@ -50,9 +51,9 @@ export default function Frame() {
 					<div className="window-appicon" onDoubleClick={ () => win.close() } />
 					<div className="window-title">中原地产 [服务端]</div>
 					<SearchBar />
-					<div className="control-button use-information" />
+					<UserInfoButton />
 					<div className="control-button settings" />
-					<div className="control-button help" />
+					<HelpButton />
 					<div className="control-button window-minimize" onClick={ () => win.minimize() } />
 					<div className={ `control-button window-${isMaximize ? "restore" : "maximize"}` } onClick={ doMaximize } />
 					<div className="control-button window-close" onClick={ () => win.close() } />
@@ -67,20 +68,15 @@ export default function Frame() {
 							<div className="mgt-icon" />
 							<span>客户管理</span>
 						</Link>
-						<Link { ...routeLinkProps("deal") }>
-							<div className="mgt-icon" />
-							<span>交易管理</span>
-						</Link>
-						<Link { ...routeLinkProps("analyze") }>
-							<div className="mgt-icon"><Icon type="bar-chart" /></div>
-							<span>统计分析</span>
+						<Link { ...routeLinkProps("team") }>
+							<div className="mgt-icon"><Icon type="team" /></div>
+							<span>团队管理</span>
 						</Link>
 					</div>
 					<div className="content-container">
 						<Switch>
 							<Route path="/client" component={ Client } />
-							<Route path="/deal" component={ Deal } />
-							<Route path="/analyze" component={ Analyze } />
+							<Route path="/team" component={ Team } />
 							<Route path={ ["/", "/room-source"] } exact component={ RoomSource } />
 						</Switch>
 					</div>

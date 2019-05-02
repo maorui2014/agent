@@ -1,73 +1,125 @@
 .room-source-page {
   display: flex;
   flex-direction: column;
+}
 
-  .filter-tabs {
-    user-select: none;
-    flex-grow: 0;
-    flex-shrink: 0;
+.page-wrapper-container {
+  display: flex;
+  flex-direction: column;
 
-    .ant-tabs-tab {
-      margin: 0;
-      padding: 12px;
+  .page-container {
+    flex: 2;
 
-      &.ant-tabs-tab-active {
-        font-weight: normal;
-      }
-    }
+    .filter-tabs {
+      user-select: none;
+      flex-grow: 0;
+      flex-shrink: 0;
 
-    .extra-contents {
-      padding-top: 4px;
-      margin-right: 10px;
-
-      .flat-button {
+      .ant-tabs-nav .ant-tabs-tab-disabled,
+      .ant-tabs-nav .ant-tabs-tab-disabled:hover {
+        color: rgba(0, 0, 0, 0.65);
         cursor: pointer;
-        font-size: 14px;
-        margin-left: 20px;
-        color: #333;
+      }
 
-        &:hover {
-          color: #0f4eff;
+      .ant-tabs-nav .ant-tabs-tab-disabled:hover {
+        color: #1890ff;
+      }
+
+      .ant-tabs-tab {
+        margin: 0;
+        padding: 12px;
+
+        > i {
+          margin-right: 0;
+        }
+
+        &.ant-tabs-tab-active {
+          font-weight: normal;
+        }
+      }
+
+      .extra-contents {
+        padding-top: 4px;
+        margin-right: 10px;
+
+        .flat-button {
+          cursor: pointer;
+          font-size: 14px;
+          margin-left: 20px;
+          color: #333;
+
+          &:hover {
+            color: #0f4eff;
+          }
         }
       }
     }
-  }
 
-  .main-data-table {
-    flex: auto;
-    position: relative;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 12px;
+    .main-data-table {
+      flex: auto;
+      position: relative;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 12px;
 
-    .ant-table-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      overflow: hidden;
-      border: 1px solid #e8e8e8;
-      border-radius: 4px;
+      .ant-table-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        border: 1px solid #e8e8e8;
+        border-radius: 4px;
 
-      .ant-table {
-        .ant-table-content {
-          font-size: 12px;
+        .ant-table {
+          .ant-table-content {
+            font-size: 12px;
 
-          .ant-table-column-sorter {
-            font-size: 14px;
-          }
-
-          .ant-table-header {
-            &::-webkit-scrollbar {
-              opacity: 0;
+            .ant-table-column-sorter {
+              font-size: 14px;
             }
-          }
 
-          .ant-table-body-outer .ant-table-body-inner {
+            .ant-table-header {
+              &::-webkit-scrollbar {
+                opacity: 0;
+              }
+            }
+
+            .ant-table-body-outer .ant-table-body-inner {
+              table {
+                width: min-content;
+
+                td {
+                  white-space: nowrap;
+                  padding: 8px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  color: #333;
+                }
+              }
+            }
+
+            .ant-table-fixed-right {
+              border-left: 1px solid #e8e8e8;
+            }
+
             table {
-              width: min-content;
+              table-layout: fixed;
+              border: 0 none;
 
-              td {
+              .ant-table-thead {
+                font-size: 12px;
+
+                tr > th {
+                  font-weight: normal;
+                  white-space: nowrap;
+                  padding: 8px;
+                }
+              }
+            }
+
+            .ant-table-tbody {
+              tr td {
                 white-space: nowrap;
                 padding: 8px;
                 overflow: hidden;
@@ -76,44 +128,24 @@
               }
             }
           }
-
-          .ant-table-fixed-right {
-            border-left: 1px solid #e8e8e8;
-          }
-
-          table {
-            table-layout: fixed;
-            border: 0 none;
-
-            .ant-table-thead {
-              font-size: 12px;
-
-              tr > th {
-                font-weight: normal;
-                white-space: nowrap;
-                padding: 8px;
-              }
-            }
-          }
-
-          .ant-table-tbody tr td {
-            white-space: nowrap;
-            padding: 8px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: #333;
-          }
         }
-      }
 
-      .ant-table-empty .ant-table-placeholder {
-        border: 0 none;
-        background-color: #f8f8f8;
+        .ant-table-empty .ant-table-placeholder {
+          border: 0 none;
+          background-color: #f8f8f8;
 
-        .ant-empty-description {
-          font-size: 12px;
+          .ant-empty-description {
+            font-size: 12px;
+          }
         }
       }
     }
+  }
+
+  .info-aside {
+	flex: 1;
+	background-color: #f7f8f8;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+	padding: 10px;
   }
 }

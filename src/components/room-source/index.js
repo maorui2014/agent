@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import SettingTab from "../setting-tab"
 import { Tabs, Icon, Table, Pagination, Tooltip } from "antd"
 
 import "./index.scss"
@@ -15,13 +16,18 @@ function AdditionalOperation() {
 }
 
 export default function RoomSource() {
+	const commonTabs = [
+		{ key: "all", tab: "全部" },
+		{ key: "setting", disabled: true, tab: <SettingTab /> }
+	]
+
 	const tabs = [
-		{ key: "follow-up", name: "房源跟进" },
-		{ key: "sell", name: "出售" },
-		{ key: "rent-out", name: "出租" },
-		{ key: "deal", name: "成交" },
-		{ key: "disabled", name: "失效" },
-		{ key: "all", name: "全部" }
+		{ key: "follow-up", tab: "房源跟进" },
+		{ key: "sell", tab: "出售" },
+		{ key: "rent-out", tab: "出租" },
+		{ key: "deal", tab: "成交" },
+		{ key: "disabled", tab: "失效" },
+		...commonTabs
 	]
 
 	const data = [
@@ -30,7 +36,7 @@ export default function RoomSource() {
 			no: "ICN8821832", signDate: "2019-12-31", status: "跟进中",
 			rentalType: "出售", counselor: "黎李鸿章", houseType: "商住两用",
 			district: "满京华喜悦里华庭", orientation: "西南", floor: "25/32",
-			unitType: "三房两厅两卫", area: "124平方", interiorFinish: "毛坯",
+			unitType: "3房2厅2卫2阳台", area: "124平方", interiorFinish: "毛坯",
 			address: "别墅区125栋A", buildingAge: 2019, propertyManagement: "深圳市万科物业有限公司",
 			propertyFee: "2.85元/平方", location: "深圳-龙岗", business: "龙岗-南联"
 		},
@@ -172,24 +178,6 @@ export default function RoomSource() {
 	]
 
 	// 1. 每列都有【冻结】按钮，鼠标移动到列后悬浮出现 [向左冻结 | 向右冻结]
-	// 2. 更换 [筛选] 按钮的图标为常规漏斗
-	// 3. 完善顶部菜单栏
-	//		1) 用户
-	//				[头像]
-	//				个人中心
-	//				购买软件许可证
-	//		2) 设置
-	//				弹出对话框
-	//		3) 帮助
-	//				问题反馈
-	//				使用文档
-	//				官方网站
-	//				--------
-	//				定制开发
-	//				--------
-	//				检查更新
-	//				--------
-	//				关于...
 
 	const render = text => <Tooltip title={ text }>{ text }</Tooltip>
 
@@ -201,7 +189,7 @@ export default function RoomSource() {
 		{ dataIndex: "rentalType", key: "rentalType", title: "租售类型", filters: [{ text: "a", value: "a" }], width: 90 },
 		{ dataIndex: "counselor", key: "counselor", title: "置业顾问", filters: [{ text: "a", value: "a" }], width: 90 },
 		{ dataIndex: "houseType", key: "houseType", title: "房屋类型", filters: [{ text: "a", value: "a" }], width: 90 },
-		{ dataIndex: "unitType", key: "unitType", title: "户型", filters: [{ text: "a", value: "a" }], width: 90 },
+		{ dataIndex: "unitType", key: "unitType", title: "户型", filters: [{ text: "a", value: "a" }], width: 105 },
 		{ dataIndex: "area", key: "area", title: "房本面积", filters: [{ text: "a", value: "a" }], width: 90 },
 		{ dataIndex: "interiorFinish", key: "interiorFinish", title: "装修情况", filters: [{ text: "a", value: "a" }], width: 90 },
 		{ dataIndex: "orientation", key: "orientation", title: "朝向", filters: [{ text: "a", value: "a" }], width: 65 },
@@ -225,17 +213,22 @@ export default function RoomSource() {
 	})
 
 	return (
-		<div className="page-container room-source-page">
-			<Tabs className="filter-tabs" defaultActiveKey={ tabs[0].key } tabBarExtraContent={ <AdditionalOperation /> } >
-				{ tabs.map(tab => <TabPane key={ tab.key } tab={ tab.name } />) }
-			</Tabs>
-			<div className="main-data-table">
-				<Table rowSelection={ { type: "radio" } } bordered scroll={ { x: "max-content", y: tableHeight } } showHeader={ Boolean(data.length) } rowKey="id"
-					rowClassName="row-selection" pagination={ false } dataSource={ data } columns={ columns } size="middle" />
+		<div className="page-wrapper-container">
+			<div className="page-container room-source-page">
+				<Tabs className="filter-tabs" defaultActiveKey={ tabs[0].key } tabBarExtraContent={ <AdditionalOperation /> } >
+					{ tabs.map(tab => <TabPane { ...tab } />) }
+				</Tabs>
+				<div className="main-data-table">
+					<Table bordered scroll={ { x: "max-content", y: tableHeight } } showHeader={ Boolean(data.length) } rowKey="id"
+						rowClassName="row-selection" pagination={ false } dataSource={ data } columns={ columns } size="middle" />
+				</div>
+				<Pagination hideOnSinglePage showSizeChanger showQuickJumper pageSizeOptions={ ["15", "30", "45", "60"] }
+					showTotal={ total => `共 ${total} 条记录` } className="pageination-wrapper" total={ data.length }
+					pageSize={ 15 } defaultCurrent={ 1 } />
 			</div>
-			<Pagination hideOnSinglePage showSizeChanger showQuickJumper pageSizeOptions={ ["15", "30", "45", "60"] }
-				showTotal={ total => `共 ${total} 条记录` } className="pageination-wrapper" total={ data.length }
-				pageSize={ 15 } defaultCurrent={ 1 } />
+			<div className="info-aside">
+				<div>detail info</div>
+			</div>
 		</div>
 	)
 }

@@ -167,7 +167,7 @@ $tb-obj-width: 45px;
       cursor: default;
       width: 90px;
       min-width: 90px;
-      background-color: #fff;
+      background-color: #fafafa;
       color: #333;
       text-align: center;
       -webkit-app-region: no-drag;
@@ -188,7 +188,7 @@ $tb-obj-width: 45px;
 
         &:hover {
           color: #3f51b5;
-          background-color: #f4f5f9;
+          background-color: #edeef5;
         }
 
         &.selection {
@@ -235,19 +235,6 @@ $tb-obj-width: 45px;
             }
           }
         }
-
-        &.deal-management {
-          .mgt-icon {
-            background-image: url(./images/deal.svg);
-          }
-
-          &:hover,
-          &.selection {
-            .mgt-icon {
-              background-image: url(./images/deal-select.svg);
-            }
-          }
-        }
       }
     }
 
@@ -256,9 +243,9 @@ $tb-obj-width: 45px;
       display: flex;
       background-color: #f3f4f5;
       box-sizing: border-box;
-      padding: 0 5px;
+      padding: 0 0 0 5px;
 
-      .page-container {
+      .page-wrapper-container {
         flex: auto;
       }
     }
