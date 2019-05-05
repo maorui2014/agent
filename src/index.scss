@@ -66,10 +66,15 @@ li {
 
     header {
       font-weight: bold;
+      display: inline-block;
     }
 
     span {
       font-size: 12px;
+    }
+
+    .buy {
+      margin-top: 10px;
     }
   }
 }

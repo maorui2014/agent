@@ -1,5 +1,5 @@
 import React from "react"
-import { Menu, Dropdown, Icon, Avatar } from "antd"
+import { Menu, Button, Dropdown, Icon, Avatar } from "antd"
 
 const { Item, Divider } = Menu
 
@@ -7,16 +7,14 @@ export default function UserInfoButton(props) {
 	const menus = (
 		<Menu>
 			<li className="user-profile">
-				<Avatar size="large" icon="user" />
+				<Avatar size={ 64 } icon="user" />
 				<div className="user-name">
-					<header>李刚</header>
-					<span>销售员</span>
+					<header>李刚</header> <span>(销售员)</span>
+					<div class="buy"><Button type="primary" icon="dollar">购买/续费软件</Button></div>
 				</div>
 			</li>
 			<Divider />
 			<Item key="profile"><Icon type="user" />个人中心</Item>
-			<Item key="buy"><Icon type="dollar" />购买软件</Item>
-			<Divider />
 			<Item key="logout" className="logout-button"><Icon type="logout" />退出登录</Item>
 		</Menu>
 	)
